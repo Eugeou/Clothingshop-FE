@@ -7,3 +7,8 @@ export interface CustomButtonProps {
     MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
 }
+
+export interface SearchClothesTypeProps {
+    clothestype: string;
+    setClothesType: (clothestype: string) => void
+}

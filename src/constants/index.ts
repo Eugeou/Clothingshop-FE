@@ -1,3 +1,17 @@
+
+export const clothestypes = [
+  "T-shirt",
+  "Vest",
+  "Hoodie",
+  "Shorts",
+  "Jeans",
+  "Bikini",
+  "Knicker",
+  "Hats",
+  "Glasses",
+];
+
+
 export const footerLinks = [
     {
       title: "About",
