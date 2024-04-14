@@ -31,9 +31,9 @@ const Slogan = () => {
         <div className="slogan__image">
           <Image src="/fashion.png" alt="Banner" 
           fill className=" object-contain" />
-
-          <div className="slogan__image-overlay"/>
         </div>
+
+        <div className="slogan__image-overlay"/>
 
       </div>
     </div>

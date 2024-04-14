@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-
+import { footerLinks } from "@/constants"
 
 const Footer = () => {
   return (
@@ -17,96 +17,62 @@ const Footer = () => {
                 </p>
             </div>
 
+ 
             <div className="footer__links">
-                
+                {footerLinks.map((item) => (
+                    <div key={item.title} className="footer__link">
+                        <h3 className="font-bold text-gray-300">{item.title}</h3>
+                        <div className="flex flex-col gap-5">
+                            {item.links.map((link) => (
+                                <Link
+                                key={link.title}
+                                href={link.url}
+                                className="text-gray-400"
+                                >
+                                {link.title}
+                                </Link>
+                            ))}
+                        </div>
+
+                        
+                    </div>
+                ))}
+
+
+                                
                 <div className="footer__link">
                     <h3 className="font-bold text-gray-300">Contact us</h3>
 
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/facebook.png" alt="Facebook" width={20} height={20} />
-                        <h3 className=" text-gray-200">You & me store </h3>
-                    </div>
-                    
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/gmail.png" alt="Email" width={20} height={25} />
-                        <h3 className=" text-gray-200">You&Meshop@gmail.com </h3>
-                    </div>
+                        <div className="flex space-x-2 items-center">
+                            <Image src="/facebook.png" alt="Facebook" width={20} height={20} />
+                            <h3 className=" text-gray-200">You & me store </h3>
+                         </div>
+                                    
+                        <div className="flex space-x-2 items-center">
+                            <Image src="/gmail.png" alt="Email" width={20} height={20} />
+                            <h3 className=" text-gray-200">You&Meshop@gmail.com </h3>
+                        </div>
 
-                    <div className="flex space-x-1 items-center">
-                        <Image src="/tik-tok.png" alt="Tiktok" width={25} height={25} />
-                        <h3 className=" text-gray-200">@You&Me </h3>
-                    </div>
+                        <div className="flex space-x-1 items-center">
+                            <Image src="/tik-tok.png" alt="Tiktok" width={25} height={25} />
+                            <h3 className=" text-gray-200">@You&Me </h3>
+                        </div>
 
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/whatsapp.png" alt="Phone" width={25} height={25} />
-                        <h3 className=" text-gray-200">0123456789 </h3>
-                    </div>
-                        
+                        <div className="flex space-x-2 items-center">
+                            <Image src="/whatsapp.png" alt="Phone" width={25} height={25} />
+                            <h3 className=" text-gray-200">0123456789 </h3>
+                        </div>
+                                        
                 </div>
-                
+                                
+                        
             </div>
 
-            <div className="footer__links">
-                
-                <div className="footer__link">
-                    <h3 className="font-bold text-gray-300">Contact us</h3>
-
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/facebook.png" alt="Facebook" width={20} height={20} />
-                        <h3 className=" text-gray-200">You & me store </h3>
-                    </div>
-                    
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/gmail.png" alt="Email" width={20} height={20} />
-                        <h3 className=" text-gray-200">You&Meshop@gmail.com </h3>
-                    </div>
-
-                    <div className="flex space-x-1 items-center">
-                        <Image src="/tik-tok.png" alt="Tiktok" width={25} height={25} />
-                        <h3 className=" text-gray-200">@You&Me </h3>
-                    </div>
-
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/whatsapp.png" alt="Phone" width={25} height={25} />
-                        <h3 className=" text-gray-200">0123456789 </h3>
-                    </div>
-                        
-                </div>
-                
-            </div>
-
-            <div className="footer__links">
-                
-                <div className="footer__link">
-                    <h3 className="font-bold text-gray-300">Contact us</h3>
-
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/facebook.png" alt="Facebook" width={20} height={20} />
-                        <h3 className=" text-gray-200">You & me store </h3>
-                    </div>
-                    
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/gmail.png" alt="Email" width={20} height={20} />
-                        <h3 className=" text-gray-200">You&Meshop@gmail.com </h3>
-                    </div>
-
-                    <div className="flex space-x-1 items-center">
-                        <Image src="/tik-tok.png" alt="Tiktok" width={25} height={25} />
-                        <h3 className=" text-gray-200">@You&Me </h3>
-                    </div>
-
-                    <div className="flex space-x-2 items-center">
-                        <Image src="/whatsapp.png" alt="Phone" width={25} height={25} />
-                        <h3 className=" text-gray-200">0123456789 </h3>
-                    </div>
-                        
-                </div>
-                
-            </div>
-
+            
         </div>
     </footer>
   )
 }
 
 export default Footer
+

@@ -39,8 +39,8 @@ const Navbar = () => {
                 <CustomButton 
                     title="Sign in"
                     btnType="button"
-                    containerStyles="text-primary-blue
-                    rounded-full border border-black drop-shadow-xl bg-white min-w-[110px]"
+                    containerStyles="text-white
+                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px]"
 
                 />
 
