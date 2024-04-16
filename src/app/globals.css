@@ -107,7 +107,7 @@ body {
   @apply flex justify-start flex-wrap items-center gap-2;
 }
 
-.home__cars-wrapper {
+.home__clothes-wrapper {
   @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
 }
 
@@ -146,7 +146,53 @@ body {
 .search-clothestype__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
-/* END: search manufacturer styles */
+/* END: search clothes styles */
+
+/* START: clothes card styles */
+.clothes-card {
+  @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+}
+
+.clothes-card__content {
+  @apply w-full flex justify-between items-start gap-2;
+}
+
+.clothes-card__content-title {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
+}
+
+.clothes-card__price {
+  @apply flex mt-6 text-[32px] leading-[38px] font-extrabold;
+}
+
+.clothes-card__price-dollar {
+  @apply self-start text-[14px] leading-[17px] font-semibold;
+}
+
+.clothes-card__price-day {
+  @apply self-end text-[14px] leading-[17px] font-medium;
+}
+
+.clothes-card__image {
+  @apply relative w-full h-40 my-3 object-contain;
+}
+
+.clothes-card__icon-container {
+  @apply flex group-hover:invisible w-full justify-between text-grey;
+}
+
+.clothes-card__icon {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+.clothes-card__icon-text {
+  @apply text-[14px] leading-[17px];
+}
+
+.clothes-card__btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+/* END: clothes card styles */
 
 /* START: Footer styles */
 .footer {

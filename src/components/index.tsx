@@ -7,6 +7,7 @@ import Footers from "./Footer"
 import SearchBar from "./SearchBar"
 import CustomFilter from "./CustomFilter"
 import SearchClothesType from "./SearchClothesType"
+import ClothesCard from "./ClothesCard"
 
 export {
     Slogan,
@@ -16,4 +17,5 @@ export {
     CustomFilter,
     SearchClothesType,
     SearchBar,
+    ClothesCard,
 }

@@ -56,7 +56,7 @@ const SearchClothesType = ({clothestype, setClothesType}: SearchClothesTypeProps
                                     value={query}
                                     className="search-clothestype__option"
                                 >
-                                    Create "{query}"
+                                    Can not find the clothes type "{query}"
                                 </Combobox.Option>
                             ) : (
                                 filteredClothesTypes.map((item) => (

@@ -1,7 +1,19 @@
-import { CustomFilter, Slogan, SearchBar } from "@/components";
+"use client";
+
+import { CustomFilter, Slogan, SearchBar, ClothesCard } from "@/components";
+import { ClothesProps } from "@/types";
+import { fetchClothes } from "@/utils";
 
 
-export default function Home() {
+
+
+export default async function Home() {
+
+  const allClothes = await fetchClothes();
+  //console.log(allClothes);
+  const isDataEmpty = !Array.isArray(allClothes) || allClothes.length < 1 || !allClothes;
+  
+
   return (
     <main className="overflow-hidden">
       <Slogan />
@@ -25,6 +37,21 @@ export default function Home() {
           </div>
 
         </div>
+
+        {isDataEmpty ? (
+          <section>
+            <div className="home__clothes-wrapper">
+              {allClothes?.data?.map((clothes: ClothesProps) => (
+                <ClothesCard clothes={clothes} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="home__error-container">
+            <h2 className=" text-black text-xl font-bold">Oops, no result</h2>
+
+          </div>
+        )}
 
       </div>
     </main>

@@ -1,0 +1,104 @@
+{
+    "clothes": [
+        {
+            "id": 1,
+            "title": "Quần jean túi hộp ống suông MIAA",
+            "price": 178000,
+            "origin": "Viet Nam",
+            "category": "Jeans",
+            "description": "Quần jean túi hộp ống suông MIAA nam nữ kèm dây phong cách Hiphop",
+            "image": null
+        },
+
+        {
+            "id": 2,
+            "title": "Áo Vest ESEA 2023",
+            "price": 197000,
+            "origin": "Viet Nam",
+            "category": "Vest",
+            "description": "Áo Vest ESEA 2023 Chiến Thuật Nhiều Túi Đa Năng Phong Cách Hip Hop",
+            "image": null
+        },
+
+        {
+            "id": 3,
+            "title": "Quần shorts đùi SSMA Star Form",
+            "price": 199000,
+            "origin": "Viet Nam",
+            "category": "Shorts",
+            "description": "Quần shorts đùi SSMA Star Form trên gối, hoa tiết in Local Brand",
+            "image": null
+        },
+
+        {
+            "id": 4,
+            "title": "Áo Sơ Mi Flannel NQ30",
+            "price": 218000,
+            "origin": "Viet Nam",
+            "category": "T-shirt",
+            "description": "Áo Sơ Mi Flannel NQ30 Có Nón Và Không Nón Tay Dài Caro",
+            "image": null
+        },
+
+        {
+            "id": 5,
+            "title": "Áo thun local brand By UniSpace",
+            "price": 185000,
+            "origin": "Viet Nam",
+            "category": "T-shirt",
+            "description": "Áo thun local brand By UniSpace tay lỡ form rộng unisex",
+            "image": null
+        },
+
+        {
+            "id": 6,
+            "title": "Áo Thun Phối Bóng Rổ Karants",
+            "price": 222000,
+            "origin": "Viet Nam",
+            "category": "T-shirt",
+            "description": "Áo Thun Phối Bóng Rổ Karants Local Brand Streetwear Form",
+            "image": null
+        },
+
+        {
+            "id": 7,
+            "title": "Kính Mắt Gọng Titan",
+            "price": 338000,
+            "origin": "Trung Quoc",
+            "category": "Glasses",
+            "description": "Kính Mắt Gọng Titan Nguyên Chất 12g sm30020 Phong Cách retro",
+            "image": null
+        },
+
+        {
+            "id": 8,
+            "title": "Kính mát nam đổi màu BDMER767",
+            "price": 128000,
+            "origin": "Trung Quoc",
+            "category": "Glasses",
+            "description": "Mắt kính mát nam đổi màu dùng cả ngày và đêm tròng Polaroid",
+            "image": null
+        },
+
+        {
+            "id": 9,
+            "title": "Áo Khoác Nỉ Hoodie Zip",
+            "price": 338000,
+            "origin": "Han Quoc",
+            "category": "Hoodie",
+            "description": "Áo Khoác Nỉ Hoodie Zip Trơn Bông",
+            "image": null
+        },
+
+        {
+            "id": 10,
+            "title": "Áo Hoodie Thêu Lavi Studio ",
+            "price": 295000,
+            "origin": "Trung Quoc",
+            "category": "Hoodie",
+            "description": "Áo Hoodie Thêu Lavi Studio Local Brand/ Shark",
+            "image": null
+        }
+
+    ]
+}
