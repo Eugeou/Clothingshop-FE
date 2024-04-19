@@ -1,6 +1,9 @@
-import Link from "next/link"
-import Image from "next/image"
-import CustomButton from "./CustomButton"
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import CustomButton from "./CustomButton";
+import router from "next/router";
 
 const Navbar = () => {
   return (
@@ -36,13 +39,12 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="flex justify-center items-center space-x-4">
-                <CustomButton 
-                    title="Sign in"
-                    btnType="button"
-                    containerStyles="text-white
-                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px]"
+                
+                <Link className="text-white py-3 text-center
+                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px]" href={"/login"}>Sign in</Link>
+                
 
-                />
+                
 
                 <CustomButton 
                     title="Sign up"
