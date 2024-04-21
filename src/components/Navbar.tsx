@@ -42,10 +42,10 @@ const Navbar = () => {
             <div className="flex justify-center items-center space-x-4">
                 
                 <Link className="text-white py-3 text-center transition duration-500 ease-in-out
-                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px] hover:border-black hover:bg-white hover:text-black" href={"/login"}>Sign in</Link>
+                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px] hover:border-black hover:bg-white hover:text-black" href={"/auth/login"}>Sign in</Link>
 
                 <Link className="text-black py-3 text-center transition duration-500 ease-in-out
-                    rounded-full border border-black drop-shadow-xl bg-white min-w-[110px] hover:border-white hover:bg-black hover:text-white" href={"/login"}>Sign up</Link>
+                    rounded-full border border-black drop-shadow-xl bg-white min-w-[110px] hover:border-white hover:bg-black hover:text-white" href={"/auth/register"}>Sign up</Link>
 
 
                 <ModeToggle />

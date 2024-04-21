@@ -36,8 +36,8 @@ export default function Login()
             maxBodyLength: Infinity,
             url: 'http://localhost:8080/api/v1/auth/login',
             headers: { 
-              'Content-Type': 'application/json', 
-              'Cookie': 'clothing-shop-jwt=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJxbjY5NDgxMEBnbWFpbC5jb20iLCJpYXQiOjE3MTM2MzUxNzIsImV4cCI6MTcxMzYzODc3Mn0.FhETUzoWcLX8zfrEkqH2wBNX9_FEa2x03yLkh01sqsY'
+              'Content-Type': 'application/json'
+    
             },
             data : data
           };
