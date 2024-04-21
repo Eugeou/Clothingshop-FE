@@ -5,38 +5,52 @@ import { Button, Card, Input } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import axios from "axios";
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { error } from "console";
 
 export default function Login()
 {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [capsLockOn, setCapsLockOn] = useState(false);
+
+    
+    const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.getModifierState('CapsLock')) {
+        setCapsLockOn(true);
+      } else {
+        setCapsLockOn(false);
+      }
+    };
+
+    
 
     const handleLogin = () => {
         let data = JSON.stringify({
             username,
             password,
-        });
-
-        let config = {
+          });
+          
+          let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: '',
-            headers: {
-                'Content-Type': 'application/json',
+            url: 'http://localhost:8080/api/v1/auth/login',
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Cookie': 'clothing-shop-jwt=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJxbjY5NDgxMEBnbWFpbC5jb20iLCJpYXQiOjE3MTM2MzUxNzIsImV4cCI6MTcxMzYzODc3Mn0.FhETUzoWcLX8zfrEkqH2wBNX9_FEa2x03yLkh01sqsY'
             },
-            data: data,
-        };
-
-        axios
-            .request(config)
-            .then((response) => {
-                console.log(JSON.stringify(response.data));
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+            data : data
+          };
+          
+          axios.request(config)
+          .then((response) => {
+            console.log(JSON.stringify(response.data));
+            
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+          
 
     }
 
@@ -62,8 +76,17 @@ export default function Login()
                         onChange={(val) => setPassword(val.target.value)} 
                         size="large" placeholder="Password" type="password" 
                         prefix={<SafetyOutlined />}
+                        onKeyUp={handleKeyUp}
                     />
+
+                    
                 </div>
+
+                {capsLockOn && 
+                    <div className="flex gap-2 mt-2">
+                        <Image src="/warning.png" alt="warning" width={20} height={20}/>
+                        <p className="text-red-500 font-semibold">Caps Lock is on!</p> 
+                    </div>}
 
                 <div className="flex justify-center items-center mt-9">
                     <Button onClick={handleLogin} type="primary" style={{width: "100%"}} >Log in</Button>

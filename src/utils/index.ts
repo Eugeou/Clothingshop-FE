@@ -1,20 +1,20 @@
-/*export async function fetchClothes(
+import axios from "axios";
+
+export async function publicFetcher(
 	url: string,
 	method: "GET" | "POST" | "PUT" | "DELETE",
 	body: any
-) {
+  ) {
 	const res = await fetch(url, {
-		method,
-		headers: {
-			"Content-type": "application/json",
-		},
-		body: JSON.stringify(body),
+	  method,
+	  headers: {
+		"Content-type": "application/json",
+	  },
+	  body: JSON.stringify(body),
 	});
-
+  
 	return res;
-}*/
-
-import axios from "axios";
+}
 
 export async function fetchClothes() {
     try {

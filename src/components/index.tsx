@@ -9,6 +9,7 @@ import CustomFilter from "./CustomFilter"
 import SearchClothesType from "./SearchClothesType"
 import ClothesCard from "./ClothesCard"
 
+
 export {
     Slogan,
     CustomButton,
@@ -18,4 +19,5 @@ export {
     SearchClothesType,
     SearchBar,
     ClothesCard,
+
 }
