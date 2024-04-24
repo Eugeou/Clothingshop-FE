@@ -16,8 +16,8 @@ const ClothesCard = ( { clothes }: ClothesCardProps ) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="clothes-card group">
-            <div className="clothes-card__content">
+        <div className="clothes-card group ml-5 gap-x-0">
+            <div className="clothes-card__content gap-x-10">
                 <h2 className="text-[22px] leading-[26px] font-bold capitalize">
                     {title} 
                 </h2>

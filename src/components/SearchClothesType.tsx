@@ -36,7 +36,7 @@ const SearchClothesType = ({clothestype, setClothesType}: SearchClothesTypeProps
                     </Combobox.Button>
 
                     <Combobox.Input 
-                        className="search-clothestype__input focus:placeholder-transparent"
+                        className="search-clothestype__input focus:placeholder-transparent bg-gray-200"
                         placeholder="Ex: T-shirt"
                         displayValue={(item: string) => item}
                         onChange={(event) => setQuery(event.target.value)}

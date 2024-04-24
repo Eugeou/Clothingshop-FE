@@ -164,7 +164,7 @@ body {
 }
 
 .home__filters {
-  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+  @apply mt-7 w-full flex-between items-center flex-wrap gap-5;
 }
 
 .home__filter-container {
@@ -214,7 +214,7 @@ body {
 
 /* START: clothes card styles */
 .clothes-card {
-  @apply flex flex-col p-5 justify-center items-start text-black bg-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+  @apply flex flex-col p-5  gap-5 justify-center items-start text-black max-w-[280px] bg-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
 }
 
 .clothes-card__content {

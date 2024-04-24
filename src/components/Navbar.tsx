@@ -5,8 +5,52 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 import router from "next/router";
 import { ModeToggle } from "./ModeToggle";
+import { signOut, useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import envConfig from "@/config";
+import { UserOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+//import { Session } from "inspector";
 
 const Navbar = () => {
+
+    const {data: session} = useSession();
+
+    const [username, setUsername] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const evnMe = envConfig.NEXT_PUBLIC_API_ENDPOINT + "/auth/me"
+
+    useEffect(() => {
+        const accessToken = localStorage.getItem('access_token');
+        if (accessToken) {
+            axios.get(evnMe, {
+                headers: {
+                  Authorization: `Bearer ${accessToken}`
+                }
+              })
+              .then(response => {
+                // Lưu thông tin người dùng vào state
+                setUsername(response.data.email);
+                setIsLoggedIn(true);
+              })
+              .catch(error => {
+                console.error('Error fetching user data:', error);
+              });
+            // Lấy username từ access token hoặc từ API
+            
+            
+        } else {
+            setIsLoggedIn(false);
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        window.location.href = '/auth/login'; // Điều hướng về trang đăng nhập sau khi đăng xuất
+    };
+
   return (
     <header className="w-full absolute z-10">
         <nav className="max-w-[1500px] mx-auto
@@ -39,17 +83,37 @@ const Navbar = () => {
                     About
                 </Link>
             </div>
+
             <div className="flex justify-center items-center space-x-4">
                 
-                <Link className="text-white py-3 text-center transition duration-500 ease-in-out
-                    rounded-full border border-white drop-shadow-xl bg-black min-w-[110px] hover:border-black hover:bg-white hover:text-black" href={"/auth/login"}>Sign in</Link>
+                {username ? ( 
+                    <>
+                    <Card className=" flex justify-center items-center
+                    bg-white rounded-full h-[35px] w-[200px] border-blue-500" >
+                        
+                        <p className="flex gap-1"> <UserOutlined /> {username}</p>
 
-                <Link className="text-black py-3 text-center transition duration-500 ease-in-out
-                    rounded-full border border-black drop-shadow-xl bg-white min-w-[110px] hover:border-white hover:bg-black hover:text-white" href={"/auth/register"}>Sign up</Link>
+                    </Card>
 
+                    <button className="flex justify-center items-center text-white py-3 text-center transition duration-500 ease-in-out
+                rounded-full border border-white drop-shadow-xl bg-black min-w-[110px] hover:border-black hover:bg-white hover:text-black" onClick={handleLogout}>Log out</button>
 
+                     </>
+                ) : (
+                    <>
+                        <Link className="text-white py-3 text-center transition duration-500 ease-in-out
+                        rounded-full border border-white drop-shadow-xl bg-black min-w-[110px] hover:border-black hover:bg-white hover:text-black" href={"/auth/login"}>Sign in</Link>
+
+                        <Link className="text-black py-3 text-center transition duration-500 ease-in-out
+                        rounded-full border border-black drop-shadow-xl bg-white min-w-[110px] hover:border-white hover:bg-black hover:text-white" href={"/auth/register"}>Sign up</Link>
+                    </>
+                )}
+
+                
+                    
                 <ModeToggle />
             </div>
+            
         </nav>
     </header>
   )

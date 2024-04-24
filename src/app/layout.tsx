@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 //import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ReactNode } from "react";
+import Providers from "./Providers";
 
 
 //const inter = Inter({ subsets: ["latin"] });
@@ -12,26 +14,28 @@ export const metadata: Metadata = {
   description: "Explore your true style!",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface IProps {
+  children: ReactNode;
+}
+
+export default function RootLayout ({children}: IProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="relative">
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-          
-            <Navbars />
-            {children}
-            <Footers />
+        <Providers>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+            
+              <Navbars />
+              {children}
+              <Footers />
 
-        </ThemeProvider>
+          </ThemeProvider>
+        </Providers>
 
       </body>
     </html>
